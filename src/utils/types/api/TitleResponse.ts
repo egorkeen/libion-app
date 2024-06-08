@@ -19,23 +19,23 @@ export interface TitleResponse {
   torrents: Torrents;
 }
 
-interface Names {
+export interface Names {
   ru: string;
   en: string;
   alternative: string | null;
 }
 
-interface Franchise {
+export interface Franchise {
   franchise: FranchiseDetails;
   releases: Release[];
 }
 
-interface FranchiseDetails {
+export interface FranchiseDetails {
   id: string;
   name: string;
 }
 
-interface Release {
+export interface Release {
   id: number;
   code: string;
   ordinal: number;
@@ -47,18 +47,18 @@ interface Status {
   code: number;
 }
 
-interface Posters {
+export interface Posters {
   small: Poster;
   medium: Poster;
   original: Poster;
 }
 
-interface Poster {
+export interface Poster {
   url: string;
   raw_base64_file: string | null;
 }
 
-interface Type {
+export interface Type {
   full_string: string;
   string: string;
   episodes: number | null;
@@ -66,7 +66,7 @@ interface Type {
   code: number;
 }
 
-interface Team {
+export interface Team {
   voice: string[];
   translator: string[];
   editing: string[];
@@ -74,19 +74,19 @@ interface Team {
   timing: string[];
 }
 
-interface Season {
+export interface Season {
   string: string;
   code: number;
   year: number;
   week_day: number;
 }
 
-interface Blocked {
+export interface Blocked {
   blocked: boolean;
   bakanim: boolean;
 }
 
-interface Player {
+export interface Player {
   alternative_player: string | null;
   host: string;
   episodes: Episodes;
@@ -94,13 +94,13 @@ interface Player {
   rutube: Record<string, any>;
 }
 
-interface Episodes {
+export interface Episodes {
   first: number;
   last: number;
   string: string;
 }
 
-interface Episode {
+export interface Episode {
   episode: number;
   name: string | null;
   uuid: string;
@@ -110,23 +110,23 @@ interface Episode {
   hls: HLS;
 }
 
-interface Skips {
+export interface Skips {
   opening: number[];
   ending: number[];
 }
 
-interface HLS {
+export interface HLS {
   fhd: string;
   hd: string;
   sd: string;
 }
 
-interface Torrents {
+export interface Torrents {
   episodes: Episodes;
   list: Torrent[];
 }
 
-interface Torrent {
+export interface Torrent {
   torrent_id: number;
   episodes: Episodes;
   quality: Quality;
@@ -143,7 +143,7 @@ interface Torrent {
   raw_base64_file: string | null;
 }
 
-interface Quality {
+export interface Quality {
   string: string;
   type: string;
   resolution: string;
@@ -151,7 +151,7 @@ interface Quality {
   lq_audio: boolean | null;
 }
 
-interface Metadata {
+export interface Metadata {
   hash: string;
   name: string;
   announce: string[];
@@ -159,7 +159,7 @@ interface Metadata {
   files_list: File[];
 }
 
-interface File {
+export interface File {
   file: string;
   size: number;
   size_string: string;

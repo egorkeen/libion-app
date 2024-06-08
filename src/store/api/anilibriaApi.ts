@@ -3,12 +3,15 @@ import {
   transformParamsToTitleUrl,
   transformParamsToListOfTitlesUrl,
   transformParamsToSearchTitleUrl,
+  transformParamsToFeedUrl,
 } from '@utils/transformers';
 import {
   TitleParams,
   SearchParams,
   TitleResponse,
   ListOfTitlesParams,
+  FeedResponse,
+  FeedParams,
 } from '@utils/types';
 
 export const anilibriaApi = createApi({
@@ -29,6 +32,15 @@ export const anilibriaApi = createApi({
     searchTitles: builder.query<TitleResponse[], SearchParams>({
       query: (params) => transformParamsToSearchTitleUrl(params),
     }),
+    getFeed: builder.query<FeedResponse, FeedParams | undefined>({
+      query: (params) => transformParamsToFeedUrl(params),
+    }),
+    getGenres: builder.query<string[], void>({
+      query: () => 'genres',
+    }),
+    getYears: builder.query<string[], void>({
+      query: () => 'years',
+    }),
   }),
 });
 
@@ -37,4 +49,7 @@ export const {
   useGetRandomTitleQuery,
   useGetListOfTitlesQuery,
   useLazySearchTitlesQuery,
+  useGetFeedQuery,
+  useGetGenresQuery,
+  useGetYearsQuery,
 } = anilibriaApi;
