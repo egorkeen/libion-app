@@ -1,10 +1,10 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import {
   transformParamsToTitleUrl,
   transformParamsToListOfTitlesUrl,
   transformParamsToSearchTitleUrl,
   transformParamsToFeedUrl,
-} from '@utils/transformers';
+} from "@utils/transformers";
 import {
   TitleParams,
   SearchParams,
@@ -12,10 +12,10 @@ import {
   ListOfTitlesParams,
   FeedResponse,
   FeedParams,
-} from '@utils/types';
+} from "@utils/types";
 
 export const anilibriaApi = createApi({
-  reducerPath: 'anilibriaApi',
+  reducerPath: "anilibriaApi",
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_ANILIBRIA_API_URL,
   }),
@@ -24,7 +24,7 @@ export const anilibriaApi = createApi({
       query: (params) => transformParamsToTitleUrl(params),
     }),
     getRandomTitle: builder.query<TitleResponse, void>({
-      query: () => 'title/random',
+      query: () => "title/random",
     }),
     getListOfTitles: builder.query<TitleResponse[], ListOfTitlesParams>({
       query: (params) => transformParamsToListOfTitlesUrl(params),
@@ -36,10 +36,10 @@ export const anilibriaApi = createApi({
       query: (params) => transformParamsToFeedUrl(params),
     }),
     getGenres: builder.query<string[], void>({
-      query: () => 'genres',
+      query: () => "genres",
     }),
     getYears: builder.query<string[], void>({
-      query: () => 'years',
+      query: () => "years",
     }),
   }),
 });

@@ -1,5 +1,5 @@
-import { TitleResponse } from './TitleResponse';
-import { YoutubeResponse } from './YoutubeResponse';
+import { TitleResponse } from "./TitleResponse";
+import { YoutubeResponse } from "./YoutubeResponse";
 
 export type FeedResponse = YoutubeItem[] | TitleItem[];
 

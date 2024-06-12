@@ -1,5 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { anilibriaApi } from './api';
+import { configureStore } from "@reduxjs/toolkit";
+import { anilibriaApi } from "./api";
 
 export const store = configureStore({
   reducer: {

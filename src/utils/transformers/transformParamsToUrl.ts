@@ -3,16 +3,16 @@ import {
   ListOfTitlesParams,
   SearchParams,
   TitleParams,
-} from '@utils/types';
+} from "@utils/types";
 
 export const transformParamsToTitleUrl = (params: TitleParams) => {
   let url = `title?${params.type}=${params.title}`;
   if (params.filter && params.filter.length > 0) {
-    url = `${url}&filter=${params.filter.join(',')}`;
+    url = `${url}&filter=${params.filter.join(",")}`;
   }
 
   if (params.remove && params.remove.length > 0) {
-    url = `${url}&remove=${params.remove.join(',')}`;
+    url = `${url}&remove=${params.remove.join(",")}`;
   }
 
   return url;
@@ -21,24 +21,24 @@ export const transformParamsToTitleUrl = (params: TitleParams) => {
 export const transformParamsToListOfTitlesUrl = (
   params: ListOfTitlesParams,
 ) => {
-  let listType = '';
+  let listType = "";
   switch (params.type) {
-    case 'code':
-      listType = 'code_list';
+    case "code":
+      listType = "code_list";
       break;
-    case 'id':
-      listType = 'id_list';
+    case "id":
+      listType = "id_list";
       break;
     default:
       break;
   }
-  let url = `title/list?${listType}=${params.titlesList.join(',')}`;
+  let url = `title/list?${listType}=${params.titlesList.join(",")}`;
   if (params.filter && params.filter.length > 0) {
-    url = `${url}&filter=${params.filter.join(',')}`;
+    url = `${url}&filter=${params.filter.join(",")}`;
   }
 
   if (params.remove && params.remove.length > 0) {
-    url = `${url}&remove=${params.remove.join(',')}`;
+    url = `${url}&remove=${params.remove.join(",")}`;
   }
   return url;
 };
@@ -51,7 +51,7 @@ export const transformParamsToSearchTitleUrl = (params: SearchParams) => {
   }
 
   if (params.genres && params.genres.length > 0) {
-    url = `${url}&genres=${params.genres.join(',')}`;
+    url = `${url}&genres=${params.genres.join(",")}`;
   }
 
   if (params.limit) {
@@ -63,11 +63,11 @@ export const transformParamsToSearchTitleUrl = (params: SearchParams) => {
   }
 
   if (params.filter && params.filter.length > 0) {
-    url = `${url}&filter=${params.filter.join(',')}`;
+    url = `${url}&filter=${params.filter.join(",")}`;
   }
 
   if (params.remove && params.remove.length > 0) {
-    url = `${url}remove=${params.remove.join(',')}`;
+    url = `${url}remove=${params.remove.join(",")}`;
   }
 
   console.log(url);
@@ -95,15 +95,15 @@ export const transformParamsToFeedUrl = (params?: FeedParams) => {
   }
 
   if (params.filter && params.filter.length > 0) {
-    url = `${url}&description_type=${params.filter.join(',')}`;
+    url = `${url}&description_type=${params.filter.join(",")}`;
   }
 
   if (params.include && params.include.length > 0) {
-    url = `${url}&description_type=${params.include.join(',')}`;
+    url = `${url}&description_type=${params.include.join(",")}`;
   }
 
   if (params.remove && params.remove.length > 0) {
-    url = `${url}&description_type=${params.remove.join(',')}`;
+    url = `${url}&description_type=${params.remove.join(",")}`;
   }
 
   if (params.playlist_type) {

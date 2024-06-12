@@ -6,7 +6,7 @@ const Profile = lazy(() => import("@pages/Profile/Profile"));
 const Random = lazy(() => import("@pages/Random/Random"));
 const Title = lazy(() => import("@pages/Title/Title"));
 
-export const App = () => {
+const App = () => {
   return (
     <Routes>
       <Route element={<Home />} path="/" />
@@ -16,3 +16,5 @@ export const App = () => {
     </Routes>
   );
 };
+
+export default App;

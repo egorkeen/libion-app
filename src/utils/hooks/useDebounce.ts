@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 /**
  *@description Хук, который позволяет отложить вызовы API, чтобы они не происходили часто.
- *@param {any} value Значение.
- *@param {number} delay Задержка в миллисекундах.
- *@returns debouncedValue, которое изменится лишь спустя delay миллисекунд.
-*/
-export const useDebounce = (value: any, delay: number) => {
+ */
+const useDebounce = <T>(value: T, delay: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
@@ -21,3 +18,5 @@ export const useDebounce = (value: any, delay: number) => {
 
   return debouncedValue;
 };
+
+export default useDebounce;
