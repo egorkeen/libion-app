@@ -1,0 +1,11 @@
+@import "/src/styles/colors.scss";
+
+.header {
+  background-color: $gray01;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px;
+  border-radius: 28px;
+  padding: 10px 65px;
+}

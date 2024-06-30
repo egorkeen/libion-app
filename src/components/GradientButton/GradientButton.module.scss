@@ -1,0 +1,49 @@
+@import "/src/styles/colors.scss";
+
+.gradientButton {
+  position: relative;
+  color: $white01;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 13px 20px;
+  border-radius: 22px;
+  border: none; /* remove default border */
+  z-index: 1;
+  transition: 0.1s linear;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(90deg, #ffa800 0%, #d23938 100%);
+    border-radius: 22px;
+    z-index: -1;
+    transition: 0.1s linear;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: $gray01;
+    border-radius: 22px;
+    transition: 0.1s linear;
+  }
+
+  &:hover {
+    &::after {
+      background: linear-gradient(90deg, #ffa800 0%, #d23938 100%);
+      transition: 0.1s linear;
+    }
+  }
+
+  &:active {
+    opacity: .9;
+  }
+}
